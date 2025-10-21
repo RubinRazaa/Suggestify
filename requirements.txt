@@ -11,11 +11,13 @@ future==0.18.3
 geocoder==1.38.1
 geographiclib==2.0
 geopy==2.4.1
+gunicorn==23.0.0
 idna==3.6
 IPy==1.1
 markdown2==2.5.4
 numpy==1.26.4
 opencv-python==4.9.0.80
+packaging==25.0
 phonenumbers==8.13.30
 python-decouple==3.8
 ratelim==0.1.6
