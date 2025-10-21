@@ -1,0 +1,11 @@
+{% extends 'suggestions/base.html' %}
+{% block content %}
+<div class="container mt-4 p-5">
+    <h3>Are you Sure Want to delete?</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger">Yes, Delete</button>
+        <a href="{% url 'suggestion:home' %}" class="btn btn-warning">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'suggestions/base.html' %}
+{% block content %}
+    <div class="container mt-5">
+        <h1 class=" mt-5 pt-3 text-center">Suggestify</h1>
+        <h6 class=" text-center">"Ask the crowd"</h1>
+        {% if suggestions %}
+            {% for s in suggestions  %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <a href="{% url 'suggestion:detail' s.pk %}" class="fs-5 text-bold" style="text-decoration: none;"><h5 class="card-title">{{ s.title }}</h5></a>
+                        <p class="card-text">{{ s.description }}</p>
+                        <small class="text-muted">Posted by {{s.author.username}}</small>
+                        {% if user == s.author %}
+                            <a href="{% url 'suggestion:suggestion_delete' s.pk %}" class="btn btn-outline-danger float-end"><span class="bi bi-trash"></span></a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center">No suggestions available.</p>
+        {% endif %}
+    </div>
+{% endblock content %}
+

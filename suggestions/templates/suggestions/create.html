@@ -1,0 +1,14 @@
+{% extends 'suggestions/base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+ <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create a Suggestion</h4>
+            <form action="{% url 'suggestion:create' %}" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
